@@ -173,13 +173,13 @@ body {
   font-size: 64px;
 }
 
-.brand span {
-  display: block;
+.brand h3 {
   margin: 12px 0 32px 0;
 }
 
 .brand p {
   margin-bottom: 28px;
+  text-align: center;
 }
 
 .brand .clothes {
@@ -217,7 +217,7 @@ body {
   margin: 0 12px;
 }
 
-.works .work li h3 {
+.works .work li h4 {
   text-align: center;
   padding: 16px;
 }
