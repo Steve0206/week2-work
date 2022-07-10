@@ -58,22 +58,6 @@ img {
           box-sizing: border-box;
 }
 
-.c-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 body {
   font-family: Roboto;
   line-height: 1.5;
@@ -91,6 +75,19 @@ body {
   background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/week2/banner.png?raw=true);
   background-position: center center;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .banner h1 {
@@ -99,8 +96,9 @@ body {
   margin-bottom: 32px;
 }
 
-.banner p {
+.banner span {
   font-weight: bold;
+  font-size: 24px;
 }
 
 .banner .pic {
@@ -112,6 +110,15 @@ body {
 
 .banner .pic li {
   margin-right: 16px;
+}
+
+.banner .pic li a {
+  display: block;
+}
+
+.banner .pic li a:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .footer {
@@ -126,8 +133,17 @@ body {
   font-weight: bold;
 }
 
-.footer p {
+.footer li {
   margin-top: 16px;
+}
+
+.footer li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer li a:hover {
+  color: red;
 }
 
 .about {
@@ -136,34 +152,44 @@ body {
   text-align: center;
 }
 
+.about img {
+  margin: 0 auto;
+}
+
 .about h2 {
   margin-bottom: 40px;
   font-size: 64px;
 }
 
-.about .intro1 {
+.about .intro-person {
+  display: inline-block;
   margin-top: 20px;
   padding-bottom: 24px;
   border-bottom: 1px solid #000;
 }
 
-.about .intro2 li {
+.about .intro-career li {
   margin-top: 28px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
-.about .intro2 li .circle {
+.about .intro-career li p {
+  position: relative;
+  display: inline-block;
+}
+
+.about .intro-career li p::before {
+  content: "";
+  position: absolute;
   width: 22px;
   height: 22px;
   background: #891818;
   border-radius: 50%;
-  margin-right: 16px;
+  top: 6px;
+  left: -30px;
 }
 
 .brand {
+  text-align: center;
   background: #000;
   color: #ffffff;
   padding: 56px 0 160px 0;
@@ -187,13 +213,28 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.brand .clothes img {
-  margin: 0 12px;
+.brand .clothes li {
+  width: 45%;
+}
+
+.brand .clothes li:nth-child(1) {
+  width: 75%;
+  margin-bottom: 40px;
+}
+
+.brand .clothes li:nth-child(2) {
+  margin-right: 24px;
 }
 
 .works {
+  text-align: center;
   padding: 56px 0 144px 0;
   font-weight: bold;
 }

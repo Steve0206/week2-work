@@ -53,12 +53,7 @@ img{
 	box-sizing: border-box;
 }
 
-.c-flex{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 body{
     font-family: Roboto;
     line-height: 1.5;
@@ -77,19 +72,30 @@ body{
     background-image:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/week2/banner.png?raw=true);
     background-position: center center;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     h1{
         font-weight: 900;
         font-size: 80px;
         margin-bottom: 32px;
     }
-    p{
+    span{
         font-weight: bold;
+        font-size: 24px;
     }
     .pic{
         margin-top: 40px;
         display: flex;
         li{
             margin-right: 16px;
+            a{
+                display: block;
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
         }
     }
 }
@@ -104,8 +110,15 @@ body{
         font-size: 64px;
         font-weight: bold;
     }
-    p{
+    li{
         margin-top: 16px;
+        a{
+            text-decoration: none;
+            color: #ffffff;
+            &:hover {
+                color: red;
+            }
+        }
     }
 }
 
@@ -114,25 +127,35 @@ body{
     padding: 56px;
     font-weight: bold;
     text-align: center;
+    img{
+        margin: 0 auto;
+    }
     h2{
         margin-bottom: 40px;
         font-size: 64px;
     }
-    .intro1{
+    .intro-person{
+        display: inline-block;
         margin-top: 20px;
         padding-bottom: 24px;
         border-bottom: 1px solid #000;
     }
-    .intro2{
+    .intro-career{
         li{
             margin-top: 28px;
-            flex-direction: row;
-            .circle {
-                width: 22px;
-                height: 22px;
-                background: #891818;
-                border-radius: 50%;
-                margin-right: 16px;
+            p{
+                position: relative;
+                display: inline-block;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 22px;
+                    height: 22px;
+                    background: #891818;
+                    border-radius: 50%;
+                    top: 6px;
+                    left: -30px;
+                }
             }
         }
     }
@@ -140,6 +163,7 @@ body{
 
 //brand
 .brand{
+    text-align: center;
     background: #000;
     color: #ffffff;
     padding: 56px 0 160px 0;
@@ -156,14 +180,24 @@ body{
     .clothes{
         margin-top: 40px;
         display: flex;
-        img {
-            margin:0 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        li{
+            width: 45%;
+            &:nth-child(1){
+                width: 75%;
+                margin-bottom: 40px;
+            }
+            &:nth-child(2) {
+                margin-right: 24px;
+            }
         }
     }
 }
 
 //works
 .works{
+    text-align: center;
     padding: 56px 0 144px 0;
     font-weight: bold;
     h2{
